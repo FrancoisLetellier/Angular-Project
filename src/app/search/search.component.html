@@ -1,0 +1,5 @@
+<input type="text" [(ngModel)]="username"> 
+<button (click) ="search($event)" *ngIf="username">ok</button>
+<ul>
+<li *ngFor="let name of names | autoComplete: username; let i = index; let isFirst = first; let isEven = even">{{ isFirst }} - {{ name }}</li>
+</ul>

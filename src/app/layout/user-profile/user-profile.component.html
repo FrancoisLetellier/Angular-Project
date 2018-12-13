@@ -1,0 +1,21 @@
+<p>
+  user-profile works!
+</p>
+<h1>{{ user.name }}</h1>
+<form (ngSubmit)="edit()" [formGroup]="form">
+
+<div *ngIf="propEmail.hasError('email')">
+  Email est pas complet
+</div>
+<div *ngIf="propEmail.hasError('emailNotUniq')">
+    Email est pas unique
+    </div>
+
+
+Name: <input type="text" formControlName="name">
+Email: <input type="text" [formControl]="propEmail" >
+Username: <input type="text" formControlName="username">
+    <button>Modified</button>
+</form>
+
+
